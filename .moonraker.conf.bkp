@@ -76,7 +76,7 @@ subscriptions =
 	octoeverywhere
 
 [notifier telegram]
-url = tgram://8861130187:AAH3O0N_hilaX8DM4JwR1JQ7UGY4tzcrbVU/8861130187
+url = tgram://8861130187:AAH3O0N_hilaX8DM4JwR1JQ7UGY4tzcrbVU/592275113
 events = started,complete,error,cancelled,paused,resumed
 title = Ender-3 V3 KE
 body = {event_message}
