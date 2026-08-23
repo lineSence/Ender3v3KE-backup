@@ -75,11 +75,47 @@ managed_services =
 subscriptions = 
 	octoeverywhere
 
-[notifier telegram_print]
+[notifier telegram_started]
 url = tgram://8861130187:AAH3O0N_hilaX8DM4JwR1JQ7UGY4tzcrbVU/592275113
-events = started,complete,error,cancelled,paused,resumed
+events = started
 title = Ender-3 V3 KE
-body = {event_name}: {event_args[1].filename}
+body = 🖨 Ender-3 V3 KE\n\n🟢 ПЕЧАТЬ НАЧАЛАСЬ\n\n📄 {event_args[1].filename}
+body_format = text
+
+[notifier telegram_complete]
+url = tgram://8861130187:AAH3O0N_hilaX8DM4JwR1JQ7UGY4tzcrbVU/592275113
+events = complete
+title = Ender-3 V3 KE
+body = 🖨 Ender-3 V3 KE\n\n✅ ПЕЧАТЬ ЗАВЕРШЕНА\n\n📄 {event_args[1].filename}\n\n🟢 Принтер свободен
+body_format = text
+
+[notifier telegram_error]
+url = tgram://8861130187:AAH3O0N_hilaX8DM4JwR1JQ7UGY4tzcrbVU/592275113
+events = error
+title = Ender-3 V3 KE
+body = 🖨 Ender-3 V3 KE\n\n🚨 ОШИБКА ПЕЧАТИ\n\n📄 {event_args[1].filename}\n\n🔴 Требуется проверка
+body_format = text
+
+[notifier telegram_cancelled]
+url = tgram://8861130187:AAH3O0N_hilaX8DM4JwR1JQ7UGY4tzcrbVU/592275113
+events = cancelled
+title = Ender-3 V3 KE
+body = 🖨 Ender-3 V3 KE\n\n🛑 ПЕЧАТЬ ОТМЕНЕНА\n\n📄 {event_args[1].filename}
+body_format = text
+
+[notifier telegram_paused]
+url = tgram://8861130187:AAH3O0N_hilaX8DM4JwR1JQ7UGY4tzcrbVU/592275113
+events = paused
+title = Ender-3 V3 KE
+body = 🖨 Ender-3 V3 KE\n\n⏸ ПЕЧАТЬ ПРИОСТАНОВЛЕНА\n\n📄 {event_args[1].filename}\n\n⚠️ Требуется действие
+body_format = text
+
+[notifier telegram_resumed]
+url = tgram://8861130187:AAH3O0N_hilaX8DM4JwR1JQ7UGY4tzcrbVU/592275113
+events = resumed
+title = Ender-3 V3 KE
+body = 🖨 Ender-3 V3 KE\n\n▶️ ПЕЧАТЬ ПРОДОЛЖЕНА\n\n📄 {event_args[1].filename}
+body_format = text
 
 [notifier telegram_gcode]
 url = tgram://8861130187:AAH3O0N_hilaX8DM4JwR1JQ7UGY4tzcrbVU/592275113
